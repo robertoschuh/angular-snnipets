@@ -4,7 +4,10 @@ de esta forma cargamos los datos en this que es el controlador en si,
 luego accedemos desde el partial con dataCtrl.propiedad.
 En el index.html NO tenemos que declarar ng-controller!!!.
 */
-angular.module('appSnippets', ['appSnippetsController'])
+angular.module('appSnippets', [])
+/**
+* 'E' - only matches element name
+*/
 .directive('userData', function(){
 	return {
 		restrict: 'E',
@@ -23,6 +26,7 @@ angular.module('appSnippets', ['appSnippetsController'])
 
 /*
 * Segundo ejemplo usando $scope.
+'E' - only matches element name
 */
 .directive('userDataScope', function(){
 	return {
@@ -38,13 +42,29 @@ angular.module('appSnippets', ['appSnippetsController'])
 })
 
 /**
-* Terce ejemplo llamando a un controlador existente.
+* Third example, calling 
+* restrict: 'A', - only matches attribute name
 */
-.directive('userDataOutsideCtrl', function(){
+.directive('userDataAttr', function(){
+	return {
+		restrict: 'A',
+		templateUrl: 'js/angular/partials/user-data-attrb-directive-ctrl.html',
+		controller: function($scope){
+				$scope.username = 'Amparito';
+				$scope.surname = 'Lopez';
+				$scope.age = '25';
+		}
+	};
+});
+
+/**
+* Cuarto ejemplo llamando a un controlador existente.
+*/
+/* .directive('userDataOutsideCtrl', function(){
 	return {
 		restrict: 'E',
 		templateUrl: 'js/angular/partials/user-data-outside-ctrl.html',
 		controller: 'UserDataController'
 		//controllerAs: 'dataOutsideCtrl'
 	};
-});
+}); */

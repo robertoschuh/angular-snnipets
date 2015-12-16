@@ -1,5 +1,5 @@
 
-angular.module('appSnippetsController')
+angular.module('appSnippets', [])
 .controller('UserDataController', function($scope){
 
 	this.username = 'Manolo';
