@@ -11,7 +11,9 @@
 <div class="main">
 		<!-- directivas como nombre de atributo restrict:"A"-->
 		<div class="row">
+
 			<div class="col-md-3">
+			<h3>Directivas</h3>
 			<user-data></user-data>	
 			
 			<user-data-scope></user-data-scope>
@@ -49,9 +51,9 @@
 				<increment-num></increment-num></br>
 				<increment-num></increment-num></br>
 			</div>	
-			<div class="col-md-3"  ng-repeat="item in data">
-			<isolate-scope-test header="item.title" 
-							   description="item.description">
+			<div class="col-md-3" >
+				<h4>Test scopes</h4>
+			<isolate-scope-test  username="dataCtrl.username" surname="dataCtrl.surname" age="dataCtrl.age">
 			</isolate-scope-test >
 
 			</div>
@@ -64,6 +66,7 @@
 	<!-- <script src="https://code.angularjs.org/1.5.0-rc.0/angular-route.min.js"></script> -->
 	<script src="js/angular/controllers/user-data.js"></script> 
 	<script src="js/angular/directives/user.js"></script>
+	<script src="js/angular/directives/test-isolate-scope.js"></script>
 	
 
 </body>

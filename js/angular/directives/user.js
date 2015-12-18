@@ -4,7 +4,7 @@ de esta forma cargamos los datos en this que es el controlador en si,
 luego accedemos desde el partial con dataCtrl.propiedad.
 En el index.html NO tenemos que declarar ng-controller!!!.
 */
-angular.module('appSnippets', [])
+angular.module('appSnippets', ['isolateDirectives'])
 /**
 * 'E' - only matches element name
 */
