@@ -21,19 +21,34 @@
 			<div user-data-attr></div>
 			</div>
 
-			<!-- modify models profiles within SCOPE (not in an alias CONTROLLER) -->
+		
 			<div class="col-md-3">
+				<!-- modify models profiles within SCOPE (not in an alias CONTROLLER) -->
+				<div> <!-- form 1 -->
+				<h3>form 2 (sin alias controller dentro de scope directamente:)</h3>
 			<input type="text" name="name" ng-model="username" placeholder="name"/></br>
 			<input type="text" name="surname" placeholder="surname"  ng-model="surname"/></br>
-			<input type="text" name="age"  placeholder="age" ng-model="age" /></br>
-			</div>
+			<input type="text" name="age"  placeholder="age" ng-model="age" />
+			</br>
+				</div>
 
-			<!-- modify models profiles within an ALIAS CONTROLLER -->
-			<div class="col-md-3">		
-			<input type="text" name="name" ng-model="dataCtrl.username" placeholder="name"/></br>
-			<input type="text" name="surname" placeholder="surname"  ng-model="dataCtrl.surname"/></br>
-			<input type="text" name="age"  placeholder="age" ng-model="dataCtrl.age" /></br>
+				<!-- modify models profiles within an ALIAS CONTROLLER -->
+				<div style="margin:20px 0"> <!-- form 2 -->
+				<h3>form 2 (con un alias controller controllerAs:)</h3>
+				<input type="text" name="name" ng-model="dataCtrl.username" placeholder="name"/></br>
+				<input type="text" name="surname" placeholder="surname"  ng-model="dataCtrl.surname"/></br>
+				<input type="text" name="age"  placeholder="age" ng-model="dataCtrl.age" /></br>
+				</div>
 			</div>
+			<div class="col-md-3">	
+			<h2> Cacharreando el SCOPE</h2>
+				<!-- ENTENDIENDO EL SCOPE -->
+				<p>Explicación: cuando modificamos un elemento en un hijo, este se modifica en el parent, por ello necesitamos crear un isolate scope (aislado), es decir, un scope para cada vez que se muestra la directiva </p>
+				<increment-num></increment-num></br>
+				<increment-num></increment-num></br>
+				<increment-num></increment-num></br>
+				<increment-num></increment-num></br>
+			</div>	
 		</div>
 
 </div>	

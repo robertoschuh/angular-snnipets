@@ -27,6 +27,7 @@ angular.module('appSnippets', [])
 /*
 * Segundo ejemplo usando $scope.
 'E' - only matches element name
+Si añadimos los datos directamente al SCOPE , no necesitamos el contrllerAs (ALIAS)
 */
 .directive('userDataScope', function(){
 	return {
@@ -55,8 +56,29 @@ angular.module('appSnippets', [])
 				$scope.age = '25';
 		}
 	};
-});
+})
 
+/**
+* Ejemplo para entender mejor el SCOPE
+ Tenemos que pasarle un isolate scope (aislado)
+ es decir : su propio scope a la directiva, para que no herede del padre
+ y el incremento de num funcione correctamente.
+*/
+.directive('incrementNum', function(){
+	var num = 1;
+	return {
+		restrict: 'E',
+		templateUrl: 'js/angular/partials/incrementNum.html',
+		// Tenemos que pasarle un isolate (aislado) scope, 
+		//le damos a la directiva su propio scope
+		scope: {}, 
+
+		controller: function($scope){
+			$scope.header = 'My title '+num++;
+		},
+		
+	};
+});
 /**
 * Cuarto ejemplo llamando a un controlador existente.
 */
