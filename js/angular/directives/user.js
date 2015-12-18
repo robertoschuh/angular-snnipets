@@ -50,7 +50,7 @@ angular.module('appSnippets', [])
 		restrict: 'A',
 		templateUrl: 'js/angular/partials/user-data-attrb-directive-ctrl.html',
 		controller: function($scope){
-				$scope.username = 'Amparito';
+				$scope.username = 'Amparitos';
 				$scope.surname = 'Lopez';
 				$scope.age = '25';
 		}
