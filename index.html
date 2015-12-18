@@ -41,7 +41,7 @@
 				</div>
 			</div>
 			<div class="col-md-3">	
-			<h2> Cacharreando el SCOPE</h2>
+				<h2> Cacharreando el SCOPE</h2>
 				<!-- ENTENDIENDO EL SCOPE -->
 				<p>Explicación: cuando modificamos un elemento en un hijo, este se modifica en el parent, por ello necesitamos crear un isolate scope (aislado), es decir, un scope para cada vez que se muestra la directiva </p>
 				<increment-num></increment-num></br>
@@ -49,6 +49,12 @@
 				<increment-num></increment-num></br>
 				<increment-num></increment-num></br>
 			</div>	
+			<div class="col-md-3"  ng-repeat="item in data">
+			<isolate-scope-test header="item.title" 
+							   description="item.description">
+			</isolate-scope-test >
+
+			</div>
 		</div>
 
 </div>	
